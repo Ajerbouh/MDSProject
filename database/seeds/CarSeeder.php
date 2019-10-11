@@ -1,5 +1,6 @@
 <?php
 
+use App\Car;
 use Faker\Factory as Faker;
 use Faker\Provider\Fakecar;
 use Illuminate\Database\Seeder;
@@ -26,6 +27,7 @@ class CarSeeder extends Seeder
      */
     public function run()
     {
+        Car::truncate();
 
         foreach (range(1, 10) as $index) {
             $this->databaseInsert();
