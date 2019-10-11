@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('cars', 'CarController@index');
+Route::get('cars/{car}', 'CarController@showCar');
+Route::post('cars', 'CarController@storeCar');
+Route::put('cars/{car}', 'CarController@updateCar');
+Route::post('cars/{car}', 'CarController@deleteCar');
