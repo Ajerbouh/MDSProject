@@ -21,4 +21,4 @@ Route::get('cars', 'CarController@index');
 Route::get('cars/{car}', 'CarController@showCar');
 Route::post('cars', 'CarController@storeCar');
 Route::put('cars/{car}', 'CarController@updateCar');
-Route::post('cars/{car}', 'CarController@deleteCar');
+Route::delete('cars/{car}', 'CarController@deleteCar');

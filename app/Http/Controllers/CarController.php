@@ -30,8 +30,14 @@ class CarController extends Controller
 
     public function deleteCar(Car $car)
     {
-        $car->delete();
+        $response = [];
+        if ($car->delete())
+        {
+            $response = [
+                'state' => 1,
+            ];
+        }
 
-        return response()->json(NULL, 204);
+        return response()->json($response);
     }
 }
